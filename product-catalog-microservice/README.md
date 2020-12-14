@@ -5,8 +5,8 @@
 a. Set the following environment variables to YCQL HOST and YCQL PORT.  example: 
 
 ```
-$ export CQLSH_HOST=192.168.64.3
-$ export CQLSH_PORT=31620
+$ export CQLSH_HOST=192.xx.xx.xx
+$ export CQLSH_PORT=9042
 ```
 
 b. Now create the necessary tables as shown below. 
@@ -21,6 +21,11 @@ C. Load sample dataset for Product catalog.
 $ cd database-setup
 $ ./dataload.sh
 ```
+
+## Configure Spring Boot app
+
+Update `spring.data.cassandra.contact-points=` in application.properties for connecting to YugabyteDB Cluster. 
+
 
 ## Build and Run on Local Workstation
 

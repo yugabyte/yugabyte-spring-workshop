@@ -24,16 +24,13 @@ Session includes walk through of YugabyteDB concepts for app developers, slide d
 - YugabyteDB Fundamentals
 
 
-- Deploying YugabyteDB on Tanzu Kubernetes Grid (TKG)
-
-
 - Implementing Product Catalog Microservice using Yugabyte CQL API (NOSQL)
 
 
 - Implementing Cart Microservice using Yugabyte SQL API (RDBMS)
 
 
-- Putting it all together on Tanzu environment
+- Putting it all together on the developer environment
 
 ## Prerequisites
 

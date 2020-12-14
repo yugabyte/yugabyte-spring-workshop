@@ -5,8 +5,8 @@
 a. Set the following environment variables to YSQL HOST and YSQL PORT.  example: 
 
 ```
-$ export YSQLSH_HOST=192.168.64.3
-$ export YSQLSH_PORT=32517
+$ export YSQLSH_HOST=192.xx.xx.xx
+$ export YSQLSH_PORT=5433
 ```
 
 b. Now create the necessary tables as shown below. 
@@ -15,17 +15,22 @@ b. Now create the necessary tables as shown below.
 $ ysqlsh -h $YSQLSH_HOST -p $YSQLSH_PORT -d postgres -f database-setup/schema.sql
 ```
 
+
+## Configure Spring Boot app
+
+Update `yugabyte.sql.datasource.url=` in application.properties for connecting to YugabyteDB Cluster. 
+
 ## Build Jars with Maven 
 To build, simply run the following from the base directory:
 
 ```
-$ mvn -DskipTests clean package
+$ ./mvnw -DskipTests clean package
 ```
 
 ## Run the app on local workstation
 
 ```
-$ mvn spring-boot:run
+$ ./mvnw spring-boot:run
 ```
 
 navigate to swagger-UI
