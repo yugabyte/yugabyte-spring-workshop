@@ -1,4 +1,4 @@
-# YugabyteDB Spring Developer Workshop for VMware Tanzu
+# YugabyteDB Spring Developer Workshop
 
 ### What will we build in this workshop?
 
