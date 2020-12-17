@@ -50,21 +50,3 @@ CREATE TABLE cronos.product_rankings (
 CREATE INDEX top_products_in_category
     ON cronos.product_rankings (category, sales_rank)
     WITH transactions = { 'enabled' : false, 'consistency_level' : 'user_enforced' };
-
-// Orders Table
-
-CREATE TABLE cronos.orders (
-    order_id text PRIMARY KEY,
-    user_id text,
-    order_details text,
-    order_time text,
-    order_total double
-) WITH default_time_to_live = 0
-    AND transactions = {'enabled': 'true'};
-
-// Product Inventory Table
-CREATE TABLE cronos.product_inventory (
-    asin text PRIMARY KEY,
-    quantity int
-) WITH default_time_to_live = 0
-    AND transactions = {'enabled': 'true'};

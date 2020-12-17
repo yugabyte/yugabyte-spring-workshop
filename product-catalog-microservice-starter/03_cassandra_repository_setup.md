@@ -22,6 +22,7 @@ public interface ProductMetadataRepo extends CassandraRepository<ProductMetadata
 In the package `com.yugabyte.app.yugastore.repo`, create a new interface `ProductRankingRepository.java`.
 
 ```
+@RepositoryRestResource(path = "productranking")
 public interface ProductRankingRepository extends CassandraRepository<ProductRanking, String> {
 	
 	@Query("select * from cronos.product_rankings where asin=?0")

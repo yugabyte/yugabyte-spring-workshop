@@ -24,7 +24,7 @@ spring.jpa.hibernate.ddl-auto=create
 # Data-source config.
 spring.datasource.platform=postgres
 #spring.datasource.url=jdbc:postgresql://localhost:5433/yugabyte
-yugabyte.sql.datasource.url=jdbc:postgresql://127.0.0.1:5433/postgres
+yugabyte.sql.datasource.url=jdbc:postgresql://127.0.0.1:5433/yugabyte
 spring.datasource.username=yugabyte
 spring.datasource.password=
 ```
