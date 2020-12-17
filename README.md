@@ -15,8 +15,8 @@ Session includes walk through of YugabyteDB concepts for app developers, slide d
 
  Microservice         | YugabyteDB API | Spring Projects | Description           |
 | -------------------- | ---------------- | ---------------- | --------------------- |
-| [Product Catalog](https://github.com/yugabyte/spring-tanzu-workshop/tree/master/product-catalog-microservice) | YCQL | Spring Boot, Spring Web, Spring Data Cassandra | This microservice serves the product catalog lookup information. It uses Spring Data Cassandra repositories for querying the product catalog information stored in YugabyteDB YCQL Table.
-| [Cart](https://github.com/yugabyte/spring-tanzu-workshop/tree/master/cart-microservice) | YSQL | Spring Boot, Spring Web, Spring Data JPA | This microservice handles the shopping cart functionality. It uses Spring Data JPA repositories for transactional commit into YugabyteDB YSQL Tables.
+| [Product Catalog](https://github.com/yugabyte/yugabyte-spring-workshop/tree/main/product-catalog-microservice) | YCQL | Spring Boot, Spring Web, Spring Data Cassandra | This microservice serves the product catalog lookup information. It uses Spring Data Cassandra repositories for querying the product catalog information stored in YugabyteDB YCQL Table.
+| [Cart](https://github.com/yugabyte/yugabyte-spring-workshop/tree/main/cart-microservice) | YSQL | Spring Boot, Spring Web, Spring Data JPA | This microservice handles the shopping cart functionality. It uses Spring Data JPA repositories for transactional commit into YugabyteDB YSQL Tables.
 
 
 ## Agenda
