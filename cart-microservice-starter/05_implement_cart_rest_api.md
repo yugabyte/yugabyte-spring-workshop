@@ -8,6 +8,23 @@ Create a new package `com.yugabyte.app.yugastore.cart.service` and create a clas
 This service will use `ShoppingCartRepository` for accessing Shopping cart data.
 
 ```
+package com.yugabyte.app.yugastore.cart.service;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.yugabyte.app.yugastore.cart.domain.ShoppingCart;
+import com.yugabyte.app.yugastore.cart.repositories.ShoppingCartRepository;
+
 @Service
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Transactional
@@ -103,6 +120,18 @@ Create a new package `com.yugabyte.app.yugastore.cart.controller`. Create a new 
 add the following HTTP mappings for adding and deleting products from Shopping Cart.
 
 ```
+package com.yugabyte.app.yugastore.cart.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.yugabyte.app.yugastore.cart.service.ShoppingCartImpl;
+
 @RestController
 @RequestMapping(value = "/cart-microservice")
 public class ShoppingCartController {

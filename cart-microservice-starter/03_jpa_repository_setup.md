@@ -3,6 +3,18 @@
 #### Step 1: Create a new package `com.yugabyte.app.yugastore.cart.repositories` and Implement JPA repositories for Domain model `ShoppingCart` we created in the previous section.
 
 ```
+package com.yugabyte.app.yugastore.cart.repositories;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.yugabyte.app.yugastore.cart.domain.ShoppingCart;
 
 public interface ShoppingCartRepository extends CrudRepository<ShoppingCart, String> {
 

@@ -32,6 +32,16 @@ spring.datasource.password=
 #### Step 2: Create a new package `com.yugabyte.app.yugastore.cart.config` and create configuration class `YugabyteDataSourceConfig`
 
 ```
+package com.yugabyte.app.yugastore.cart.config;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.yugabyte.ysql.YBClusterAwareDataSource;
+
 @Configuration
 public class YugabyteDataSourceConfig {
 	

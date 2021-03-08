@@ -22,6 +22,12 @@ server.port=8082
 `@EnableCassandraRepositories` annotation enables Cassandra repositories for `ProductMetadata` and `ProductRanking` domains.
 
 ```
+package com.yugabyte.app.yugastore.config;
+
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
+
 @Configuration
 @EnableAutoConfiguration
 @EnableCassandraRepositories(basePackages = { "com.yugabyte.app.yugastore.repo" })

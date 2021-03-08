@@ -5,6 +5,19 @@
 Create a new package `com.yugabyte.app.yugastore.repo` and create the interface `ProductMetadataRepo.java`.
 
 ```
+package com.yugabyte.app.yugastore.repo;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.cassandra.repository.CassandraRepository;
+import org.springframework.data.cassandra.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.annotation.RestResource;
+
+import com.yugabyte.app.yugastore.domain.ProductMetadata;
+
 @RepositoryRestResource(path = "product")
 public interface ProductMetadataRepo extends CassandraRepository<ProductMetadata, String> {
 	
@@ -22,6 +35,16 @@ public interface ProductMetadataRepo extends CassandraRepository<ProductMetadata
 In the package `com.yugabyte.app.yugastore.repo`, create a new interface `ProductRankingRepository.java`.
 
 ```
+package com.yugabyte.app.yugastore.repo;
+
+import java.util.List;
+import java.util.Optional;
+import org.springframework.data.cassandra.repository.CassandraRepository;
+import org.springframework.data.cassandra.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RestResource;
+import com.yugabyte.app.yugastore.domain.ProductRanking;
+
 @RepositoryRestResource(path = "productranking")
 public interface ProductRankingRepository extends CassandraRepository<ProductRanking, String> {
 	

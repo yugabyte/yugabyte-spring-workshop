@@ -4,6 +4,13 @@
 
 
 ```
+package com.yugabyte.app.yugastore.cart.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity(name = "shopping_cart")
 @Table(name = "shopping_cart")
 public class ShoppingCart {

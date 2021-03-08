@@ -4,7 +4,7 @@ a. Set the following environment variables to YCQL HOST and YCQL PORT.  example:
 
 ```
 $ export CQLSH_HOST=192.168.64.3
-$ export CQLSH_PORT=31620
+$ export CQLSH_PORT=9042
 ```
 
 b. Now create the necessary tables as shown below. 

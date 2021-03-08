@@ -11,6 +11,13 @@ and second service for retrieving the products by category.
 Create a new package `com.yugabyte.app.yugastore.service` and create the following interfaces -
 
 ```
+package com.yugabyte.app.yugastore.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.yugabyte.app.yugastore.domain.ProductRanking;
+
 public interface ProductRankingService {
 
 	Optional<ProductRanking> findProductRankingById(String asin);
@@ -21,6 +28,13 @@ public interface ProductRankingService {
 ```
 
 ```
+package com.yugabyte.app.yugastore.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.yugabyte.app.yugastore.domain.*;
+
 public interface ProductService {
 
     Optional<ProductMetadata> findById(String id);
@@ -35,6 +49,18 @@ public interface ProductService {
 Create a new package `com.yugabyte.app.yugastore.service.impl` and create the following implementations
 
 ```
+package com.yugabyte.app.yugastore.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yugabyte.app.yugastore.domain.ProductRanking;
+import com.yugabyte.app.yugastore.repo.ProductRankingRepository;
+import com.yugabyte.app.yugastore.service.ProductRankingService;
+
 @Service
 public class ProductRankingServiceImpl implements ProductRankingService {
 	
@@ -62,6 +88,18 @@ public class ProductRankingServiceImpl implements ProductRankingService {
 ```
 
 ```
+package com.yugabyte.app.yugastore.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yugabyte.app.yugastore.domain.ProductMetadata;
+import com.yugabyte.app.yugastore.repo.ProductMetadataRepo;
+import com.yugabyte.app.yugastore.service.ProductService;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -92,6 +130,22 @@ Create a new package `com.yugabyte.app.yugastore.controller`. Create a new class
 add the following HTTP mappings for displaying the Product Catalog Information.
 
 ```
+package com.yugabyte.app.yugastore.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.yugabyte.app.yugastore.domain.ProductMetadata;
+import com.yugabyte.app.yugastore.domain.ProductRanking;
+import com.yugabyte.app.yugastore.service.ProductRankingService;
+import com.yugabyte.app.yugastore.service.ProductService;
+
 @RestController
 @RequestMapping(value = "/products-microservice")
 public class ProductCatalogController {
